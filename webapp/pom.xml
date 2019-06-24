@@ -10,10 +10,10 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>webapp</artifactId>
+  <artifactId>TryBuildAndDeploy</artifactId>
   <packaging>war</packaging>
-  <name>Webapp</name>
-  <description>Webapp.</description>
+  <name>MyFirstMaven</name>
+  <description></description>
 
   <build>
     <finalName>${project.artifactId}</finalName>
