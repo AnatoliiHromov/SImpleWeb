@@ -13,7 +13,7 @@
   <artifactId>TryBuildAndDeploy</artifactId>
   <packaging>war</packaging>
   <name>MyFirstMaven</name>
-  <description></description>
+  <description>MyFirstMaven</description>
 
   <build>
     <finalName>${project.artifactId}</finalName>
