@@ -24,7 +24,7 @@ pipeline {
                  message '!______________Build-----------------------'
             }
               dir ('MavenPipe') {
-                  sh "${mvnHome}/home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn clean install test package'
+                  sh "${mvnHome}/home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn clean install test package"
             }
         }
     }
