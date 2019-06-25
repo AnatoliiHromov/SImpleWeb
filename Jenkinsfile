@@ -1,13 +1,13 @@
 #!groovy
 // Check ub1 properties
 properties([disableConcurrentBuilds()])
-properties([pipelineTriggers([githubPush()])])
+
 
 pipeline {
         agent {
             label 'ubuntu'
         }   
- 
+        triggers { pollSCM('* * * * *') }
         options {
         buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
         timestamps()
