@@ -32,8 +32,8 @@ pipeline {
     }
       stage ('Deploy'){
            steps {
-                echo '!______________deploy -----------------------'
-                sh "curl -u deploy:12345 --upload-file /home/jenkins/workspace/MavenWebPipeline/webapp/target/TryBuildAndDeploy.war "http://ec2-35-176-16-201.eu-west-2.compute.amazonaws.com:8080/manager/deploy?path=/debug&update=true"
+                echo '!______________deploy y-----------------------'
+                sh 'curl -u deploy:12345 --upload-file /home/jenkins/workspace/MavenWebPipeline/webapp/target/TryBuildAndDeploy.war "http://ec2-35-176-16-201.eu-west-2.compute.amazonaws.com:8080/manager/deploy?path=/debug&update=true"'
             }
            }
         
