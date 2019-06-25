@@ -33,7 +33,7 @@ pipeline {
       stage ('Deploy'){
            steps {
                 echo '!______________deploy y-----------------------'
-                withCredentials([usernamePassword(credentialsId: 'dockerhub_semaev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'tomcat', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh 'curl -v -u $USERNAME:$PASSWORD --upload-file /home/jenkins/workspace/MavenWebPipeline/webapp/target/TryBuildAndDeploy.war "http://ec2-35-176-16-201.eu-west-2.compute.amazonaws.com:8080/manager/text/deploy?path=/home/jenkins/workspace/MavenWebPipeline/webapp/target/TryBuildAndDeploy.war&update=true"'
             }
            }
