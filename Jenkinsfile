@@ -16,8 +16,10 @@ pipeline {
     }
     stages {
      stage ('Checkout'){
+         steps{
         git branch: 'master', url: 'https://github.com/AnatoliiHromov/SImpleWeb.git'
-    }
+         }
+     }
       stage ('Build'){
           steps{
              echo {
