@@ -34,7 +34,7 @@ pipeline {
            steps {
                 echo '!______________deploy y-----------------------'
                 withCredentials([usernamePassword(credentialsId: 'tomcat', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                sh 'curl -v -u $USERNAME:$PASSWORD --upload-file /home/jenkins/workspace/MavenWebPipeline/webapp/target/TryBuildAndDeploy.war "http://ec2-35-176-16-201.eu-west-2.compute.amazonaws.com:8080/manager/text/deploy?path=/TryBuildAndDeployPipe&update=true"'
+                sh 'curl -v -u $USERNAME:$PASSWORD --upload-file /home/jenkins/workspace/MavenWebPipeline/webapp/target/TryBuildAndDeploy.war "http://ec2-35-176-16-201.eu-west-2.compute.amazonaws.com:8080/manager/text/deploy?path=/TryBuildAndDeployPipe.war&update=true"'
             }
            }
       }
