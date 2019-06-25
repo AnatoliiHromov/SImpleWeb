@@ -7,13 +7,14 @@ pipeline {
         agent {
             label 'ubuntu'
         }   
-        tools { 
-            maven 'maven' 
-        }
+ 
         options {
         buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
         timestamps()
     }
+           tools { 
+            maven 'maven' 
+        }
     stages {
      stage ('Checkout'){
          steps{
@@ -22,10 +23,11 @@ pipeline {
      }
       stage ('Build'){
           steps{
-             echo "!______________Build-----------------------"            
-              dir ('MavenPipe') {
-                  sh "${mvnHome}/home/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn clean install test package"
-            }
+              
+             echo "!______________Build-----------------------"      
+            sh 'mvn --version'      
+       
+            
         }
     }
         
